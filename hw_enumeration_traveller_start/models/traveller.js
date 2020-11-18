@@ -35,7 +35,17 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-
+  // creates empty list
+  let unique = [];
+  // loops through journeys
+  this.journeys.forEach((journey) => {
+    // adds each value for transport onto the end of unique []
+    unique.push(journey.transport);
+  });
+  // create a unique list, from the list, 'unique' - 'Set' makes unique lists
+  unique = new Set(unique);
+  // returns the list, which is now a unique list
+  return Array.from(unique);
 };
 
 
